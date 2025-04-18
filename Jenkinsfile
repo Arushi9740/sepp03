@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-                git url: 'https://github.com/Arushi9740/sepp02.git', branch: 'main'
+                git url: 'https://github.com/Arushi9740/sepp03.git', branch: 'main'
             }
         }
 
@@ -20,22 +20,22 @@ pipeline {
             }
         }
 
-        stage('Run bill records') {
+        stage('Run beneficiary') {
             steps {
-                echo "Executing bill.py"
+                echo "Executing beneficiary.py"
                 bat '''
                 call venv\\Scripts\\activate
-                python bill.py
+                python beneficiary.py
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo "Running test_bill.py"
+                echo "Running test_case.py"
                 bat '''
                 call venv\\Scripts\\activate
-                pytest test_bill.py
+                pytest test_case.py
                 '''
             }
         }
