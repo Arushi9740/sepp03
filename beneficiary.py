@@ -1,7 +1,8 @@
 beneficiaries = {}
 
-def add_beneficiary(bid, name):
-    if bid not in beneficiaries:
-        beneficiaries[bid] = name
-        return "Beneficiary added"
-    return "Already exists"
+# Function to add a beneficiary
+def add_beneficiary(id, name):
+    if id in beneficiaries:
+        return "Already exists"
+    beneficiaries[id] = name
+    return "Beneficiary added"
